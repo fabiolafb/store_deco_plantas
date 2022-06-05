@@ -1,0 +1,322 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+.grid-container{
+    display:grid;
+    height: auto;
+    grid-template-areas:  
+    'header'
+    'section'
+    'main'
+    'nav'
+    'footer';
+    grid-template-rows: 2.0% 2.2% auto 1.4% 1.5% ;
+}
+
+/* encabezado */
+header{
+    grid-area: header;
+    background-color: rgb(174, 153, 81);
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: sticky;
+    top: 0;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    height: 90%;
+}
+
+.logo-planta{
+    height: 45%;
+    padding-left: 1rem;
+}
+.nombre-e{
+    font-size: 1.1rem;
+    margin: 0;
+    padding-left: 0.5rem;
+}
+.i {
+    font-size: 1.5rem;
+    color: aliceblue;
+    padding-right: 1rem;
+}
+.menu-lateral {
+    display: none;
+}
+/* selector */
+section {
+    grid-area: section;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    height: 100%;
+    color: #535454;
+}
+
+.txt-ordenador{
+    font-size: 1.1rem;
+    height: 30%;
+    margin: 0;
+}
+.form-selector {
+    display: flex;
+    justify-content: center;
+    height: 40%;
+    width: 80%;
+    margin: 0;
+}
+.form-selector select{
+    width: 100%;
+    border-radius: 5px;
+    border-color: #a6b3b3;
+}
+
+ 
+/* productos */
+main {
+    grid-area: main;
+    height: 100%;
+    background-color: white;
+}
+.productos{
+    display: grid;
+    grid-template-columns: 80%;
+    column-gap: 5px;
+    row-gap: 15px;
+    margin: 5% 0 0 0;
+    justify-content: center;
+    align-content: center;
+}
+.prod {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border: solid 1.7px rgba(240, 240, 240, 0.76);
+    height: auto;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0.2, 0.2);
+}
+.prod img{
+    height: 70%;
+    width: 100%;
+    border: 0.5px solid rgba(255, 255, 255, 0.551);
+}
+
+.prod h3{
+    text-align: center;
+    margin: 0;
+    color: #535454;
+}
+.precio{
+    text-align: center;
+    margin:0;
+    color: rgba(120, 120, 120, 0.863);
+}
+.boton {
+    background-color: rgb(174, 153, 81);
+    color: aliceblue;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+button {
+    background-color: rgba(145, 124, 55, 0.484) ;
+    color: aliceblue;
+}
+
+/* nav paginador */
+nav {
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: white;
+    position:sticky;
+    bottom: 63px;
+}
+
+.paginador {
+   list-style: none; 
+   display: flex;
+   justify-content: center;
+   align-items:center;
+   align-content: center;
+   padding: 0;
+   text-decoration: none;
+}
+
+.paginador a{
+    color: rgba(145, 124, 55, 0.484);
+    border: 1px solid #ddd;
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+}
+
+.paginador li a:hover{
+    background: rgb(174, 153, 81);
+    color: white;
+}
+
+/* pie de pagina */
+footer{
+    grid-area: footer;
+    background-color: rgb(145, 124, 55);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: sticky;
+    bottom: 0;
+    top: 0;
+}
+.i-rrss {
+    font-size: 100%;
+}
+.derechos {
+    margin: 0;
+    font-size: 100%;
+}
+
+/* --- MEDIA QUIERIES cambios desktop --- */
+@media (min-width: 576px) {
+    /* distribución grid container */
+    .grid-container {
+        display: grid;
+        grid-template-areas: 
+        'header section'
+        'header main'
+        'header main'
+        'footer main'
+        'footer nav';
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 1fr;
+    }
+
+    /* encabezado MQ */
+    header{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+      }
+    .i {
+    display: none;
+    }
+    .encabezado {
+    display: flex; 
+    height: 8%;
+    position: sticky;
+    top: 0;
+    }
+    .logo-planta{
+    padding-left: 0;
+    height: 35%;
+    }
+    .nombre-e{
+    font-size: 1rem;
+    }
+    .menu-lateral {
+    background-color: rgb(174, 153, 81);
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 3px;
+    width: 100%;
+    position: sticky;
+    top: 15%;
+
+    }
+    .menu-lateral a{
+    font-size: 1rem;
+    text-decoration: none; 
+    color: aliceblue;
+    padding: 8px;
+    }
+
+
+    /* selector MQ */
+    section {
+    position: sticky;
+    top: 0;
+    height: 80px;
+    align-content: space-around;
+    }
+    .txt-ordenador{
+    font-size: 90%;
+    }
+    .form-selector {
+    height: 40%;
+    font-size: 90%;
+    }
+
+    /* productos MQ */
+    .productos{
+    display: grid; 
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 30% 30% 30%;
+    column-gap: 25px;
+    row-gap: 30px;
+    margin: 0;
+    justify-content: center;
+    align-content: center;
+    }
+    .zoom {
+    transition: transform,.2s;
+    }
+    .zoom:hover{
+    transform: scale(1.2);
+    }
+    .prod h3 {
+    padding-top: 1rem;
+    }
+
+    /* nav paginador MQ */
+    nav {
+    position:sticky;
+    bottom: 0;
+    height: 70px;
+    }
+
+    /* pie de pagina MQ */
+    footer{
+    width: 100%;
+    height: 90px;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+     }
+    .i-rrss {
+    font-size: 18px;
+    }
+    .derechos {
+    margin: 0;
+    font-size: 16.5px;
+    text-align: center;
+    padding-top: 0.5rem;
+    }
+}
